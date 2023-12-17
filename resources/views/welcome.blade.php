@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    </head>
+    <body>
+        <div class="row mt-3">
+            
+<h1>Welcome</h1>
+
+        </div>
+        <script src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_MAP_KEY')}}&libraries=places&callback=initAutocomplete" async></script>
+        <script>
+            let autocomplete;
+
+            /* ------------------------- Initialize Autocomplete ------------------------ */
+            function initAutocomplete() {
+                const input = document.getElementById("placeInput");
+                const options = {
+                    componentRestrictions: { country: "GH" }
+                }
+                autocomplete = new google.maps.places.Autocomplete(input, options);
+                autocomplete.addListener("place_changed", onPlaceChange)
+            }
+
+            /* --------------------------- Handle Place Change -------------------------- */
+            function onPlaceChange() {
+                const place = autocomplete.getPlace();
+                console.log(place.formatted_address);
+                console.log(place.geometry.location.lat());
+                console.log(place.geometry.location.lng());
+                $('#latitude').val(place.geometry['location'].lat());
+            $('#longitude').val(place.geometry['location'].lng());
+            }
+        </script>
+    </body>
+</html>
