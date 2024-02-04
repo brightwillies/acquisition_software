@@ -73,6 +73,7 @@ Route::group(['prefix' => 'v1'], function () {
             //Acquisition pages
       Route::controller(RequisitionController::class)->group(function () {
         Route::group(['prefix' => 'acquisition'], function () {
+            Route::get('/count/items', 'count');
             Route::get('/', 'index');
             Route::get('/pending-request', 'pendingRequest');
             Route::get('/other-request', 'otherRequest');

@@ -27,13 +27,13 @@ class CreatePurchaseRequestsTable extends Migration
             $table->string('why_cash_cheque')->nullable();
             $table->string('purchaser_note')->nullable();
             $table->string('place_of_use')->nullable();
-            $table->string('reason_for_purchase')->nullable();   
+            $table->string('reason_for_purchase')->nullable();
 
             //these fields are for the HOD
             $table->date('permitted_on')->nullable();
             $table->string('hod_status')->nullable()->default('Received');
             $table->string('hod_note')->nullable();
-            
+
             //Supervisor
             $table->string('type')->nullable();
             $table->string('type_of_expenditure')->nullable();
@@ -48,7 +48,7 @@ class CreatePurchaseRequestsTable extends Migration
             $table->string('mask');
 
             $table->integer('department_head_id')->nullable();
-  
+
             $table->timestamps();
         });
     }

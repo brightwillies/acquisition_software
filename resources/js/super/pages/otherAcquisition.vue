@@ -77,6 +77,19 @@
                                                         singleItem.hod_status }}</span>
                                             </td>
 
+                                            <td>
+                                                <span v-if="singleItem.revised_status === 'Approved'"
+                                                    class="badge badge-pill badge-soft-success font-size-12"> {{
+                                                        singleItem.revised_status }}</span>
+
+                                                <span v-if="singleItem.revised_status === 'Received'"
+                                                    class="badge badge-pill badge-soft-secondary font-size-12"> {{
+                                                        singleItem.revised_status }}</span>
+                                                <span v-if="singleItem.revised_status === 'Update'"
+                                                    class="badge badge-pill badge-soft-danger font-size-12">{{
+                                                        singleItem.revised_status }}</span>
+                                            </td>
+
                                             <!-- <td>
                                                 <div class="table-image">
                                                     <img :src="singleItem.image"  width="50" height="50" class="rounded-circle" alt="">

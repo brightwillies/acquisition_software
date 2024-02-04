@@ -2,9 +2,9 @@
 <html lang="en">
 
 <head>
-        
+
         <meta charset="utf-8" />
-        <title>ACI Dashboard</title>
+        <title>ACI  Purchaser Dashboard</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="ACIDMS Dashboard" name="description" />
         <meta content="Makis Technologies" name="author" />
@@ -27,7 +27,7 @@
         <!-- Begin page -->
         <div id="layout-wrapper">
 
-            
+
          <div id="app">
 
          </div>
@@ -35,7 +35,7 @@
         </div>
         <!-- END layout-wrapper -->
 
-       
+
 
         <!-- Right bar overlay-->
         <div class="rightbar-overlay"></div>
@@ -59,9 +59,9 @@
         <script src="/bassets/libs/datatables.net-buttons/js/buttons.html5.min.js"></script>
         <script src="/bassets/libs/datatables.net-buttons/js/buttons.print.min.js"></script>
         <script src="/bassets/libs/datatables.net-buttons/js/buttons.colVis.min.js"></script>
-        
 
-        
+
+
 
         <!--maxlength-->
         <script src="/bassets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>

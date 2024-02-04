@@ -15,23 +15,42 @@ class RequisitionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+
+     public function count(Request $request)
+     {
+        $user_id  = $request->added_by;
+
+         $pending = PurchaseRequest::where('hod_status', 'Approved')->where('revised_status', '<>', 'Approved')->where('department_head_id', $request->added_by)->count();
+         $approved = PurchaseRequest::where('hod_status', 'Approved')->where('revised_status', 'Approved')->where('department_head_id', $request->added_by)->count();
+
+         $data = array(
+             'pending' => $pending,
+             'approved' => $approved,
+             'total'=> $approved + $pending
+         );
+
+         return $this->successResponse('', $data);
+
+     }
     public function pendingRequest(Request $request)
     {
-    
+
 
         $userId = $request->added_by;
-      
+
         $records = PurchaseRequest::where('hod_status', 'Received')->where('department_head_id', $userId)->get();
         return $this->successResponse('', $records);
 
     }
 
-    public function otherRequest()
+    public function otherRequest(Request $request)
     {
-        
+
 
         $userId = $request->added_by;
-    
+
         $records = PurchaseRequest::where('hod_status', '<>', 'Received')->where('department_head_id', $userId)->get();
         return $this->successResponse('', $records);
 

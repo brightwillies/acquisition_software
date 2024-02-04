@@ -1,5 +1,5 @@
 <template>
- 
+
         <div class="vertical-menu">
 
             <div data-simplebar class="h-100">
@@ -16,20 +16,20 @@
                                 <span key="t-dashboards">Dashboards</span>
                             </a>
                             <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="/administrator-dashboard" key="t-default">Dashboard</a></li>
+                                <li><a href="/hod-dashboard" key="t-default">Dashboard</a></li>
 
                             </ul>
                         </li>
 
 
-               
+
 
                         <li class="menu-title" key="t-pages">Acquisitions</li>
                         <li><a href="/hod-dashboard/pending-acquisition" key="t-login">Pending Acquisitions</a></li>
                         <li><a href="/hod-dashboard/other-acquisition" key="t-login">Other   Acquisitions</a></li>
-               
-                         
-                
+
+
+
                     </ul>
                 </div>
                 <!-- Sidebar -->
@@ -40,7 +40,7 @@
 
 <script>
     export default {
-        
+
     }
 </script>
 

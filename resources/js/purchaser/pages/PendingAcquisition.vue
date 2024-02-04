@@ -54,7 +54,7 @@
                                             <th>HOD Status</th>
                                             <th>Supervisor Status</th>
                                             <th>View </th>
-                                            <th>Options</th>
+                                            <!-- <th>Options</th> -->
                                         </tr>
                                     </thead>
 
@@ -63,7 +63,7 @@
                                             <td>{{ singleItem.title }}</td>
                                             <td>{{ singleItem.purpose }}</td>
                                             <td>{{ singleItem.requested_on }}</td>
-                                          
+
                                             <td>
                                                 <span v-if="singleItem.hod_status === 'Approved'"
                                                     class="badge badge-pill badge-soft-success font-size-12"> {{
@@ -142,10 +142,10 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
 
-          
+
                         <div class="modal-body">
                             <!-- <form> -->
-                         
+
                                 <div class="row">
                                     <div class="col-sm-6">
 
@@ -233,7 +233,7 @@
                                         </div>
 
 
-                                       
+
                                         <div class="form-group">
                                             <strong>List of uploaded files</strong>
                                             <div
@@ -262,10 +262,10 @@
                             <!-- </form> -->
                         </div>
                         <div class="modal-footer">
-                           
+
 
                         </div>
-                  
+
                 </div>
             </div>
         </div>
@@ -400,7 +400,7 @@ export default {
             required: true,
             editmode: false,
             tableData: [],
-           
+
 
             form: new Form({
                 items: "",
@@ -413,7 +413,7 @@ export default {
                 why_cash_cheque: "",
                 momo_number: "",
                 department_id:"",
-              
+
             }),
         };
     },
@@ -496,7 +496,7 @@ export default {
         },
 
 
- 
+
         getRecent() {
 
 
@@ -581,7 +581,7 @@ export default {
             this.isSaving = false;
             var vm = this;
             let formData = new FormData();
-          
+
             formData.append("delivery_man_id", this.form.delivery_man_id);
             formData.append("status", this.form.status);
             formData.append("total_fees", this.form.total_fees);
@@ -640,7 +640,7 @@ export default {
         },
 
         launchEditModal(record) {
-         
+
             this.form.reset();
             this.editmode = true;
             this.form.fill(record);

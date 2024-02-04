@@ -8,7 +8,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                            <h4 class="mb-sm-0 font-size-18">Orders :</h4>
+                            <h4 class="mb-sm-0 font-size-18">APPROVED REQUESTS :</h4>
                             <div class="page-title-right">
                                 <!-- <ol class="breadcrumb m-0">
                                     <li class="breadcrumb-item"><a href="javascript: void(0);"></a></li>
@@ -54,7 +54,7 @@
                                             <th>HOD Status</th>
                                             <th>Supervisor Status</th>
                                             <th>View </th>
-                                            <th>Options</th>
+                                            <!-- <th>Options</th> -->
                                         </tr>
                                     </thead>
 
@@ -63,7 +63,7 @@
                                             <td>{{ singleItem.title }}</td>
                                             <td>{{ singleItem.purpose }}</td>
                                             <td>{{ singleItem.requested_on }}</td>
-                                          
+
                                             <td>
                                                 <span v-if="singleItem.hod_status === 'Approved'"
                                                     class="badge badge-pill badge-soft-success font-size-12"> {{
@@ -142,10 +142,10 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
 
-          
+
                         <div class="modal-body">
                             <!-- <form> -->
-                         
+
                                 <div class="row">
                                     <div class="col-sm-6">
 
@@ -233,7 +233,7 @@
                                         </div>
 
 
-                                       
+
                                         <div class="form-group">
                                             <strong>List of uploaded files</strong>
                                             <div
@@ -262,15 +262,15 @@
                             <!-- </form> -->
                         </div>
                         <div class="modal-footer">
-                           
+
 
                         </div>
-                  
+
                 </div>
             </div>
         </div>
 
-     
+
 
         <div class="modal fade" id="deleteRecordModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -328,7 +328,7 @@ export default {
 
             deliverymen_api: "/api/admin/v1/orders",
 
-            item_name: "Pending Request",
+            item_name: "Approved Request",
 
             item_api: "/api/purchaser/v1/acquisition/approved-request",
              departments: [],
@@ -338,7 +338,7 @@ export default {
             required: true,
             editmode: false,
             tableData: [],
-           
+
 
             form: new Form({
                 items: "",
@@ -350,7 +350,7 @@ export default {
                 method_of_payment: "Cheque",
                 why_cash_cheque: "",
                 momo_number: "",
-                deparment_id:"",
+                department_id:"",
             }),
         };
     },
@@ -433,7 +433,7 @@ export default {
         },
 
 
- 
+
         getRecent() {
 
 
@@ -518,7 +518,7 @@ export default {
             this.isSaving = false;
             var vm = this;
             let formData = new FormData();
-          
+
             formData.append("delivery_man_id", this.form.delivery_man_id);
             formData.append("status", this.form.status);
             formData.append("total_fees", this.form.total_fees);
